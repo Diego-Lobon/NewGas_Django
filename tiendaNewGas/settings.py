@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'tiendaNewGas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'newgas',
+        'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': ''
+        'PASSWORD': 'ZWTnU9JVsUYKK6kTJJVh',
+        'HOST': 'containers-us-west-142.railway.app',
+        'PORT': '6775'
     }
 }
 

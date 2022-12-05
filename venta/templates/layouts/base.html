@@ -18,24 +18,30 @@
         <nav class="header_nav">
             <ul>
                 <li>
-                    <a href="">EMPRESA</a>
+                    <a href="{% url 'empresa' %}">EMPRESA</a>
                 </li>
                 <li>
-                    <a href="">PRODUCTOS</a>
+                    <a href="{% url 'productos' %}">PRODUCTOS</a>
                 </li>
                 <li>
-                    <a href="">SERVICIOS</a>
+                    <a href="{% url 'servicios' %}">SERVICIOS</a>
                 </li>
                 <li>
-                    <a href="">CONTACTENOS</a>
+                    <a href="{% url 'contactenos' %}">CONTACTENOS</a>
                 </li>
-
-                <li>
-                    <a href="">INICIAR SESION</a>
-                    <span> | </span>
-                    <a href="">REGISTRARSE</a>
-                </li>
-                
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'miCuenta' %}">{{ user.username }}</a>
+                        <span> | </span>
+                        <a href="{% url 'logout' %}">CERRAR SESION</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'iniciarSesion' %}">INICIAR SESION</a>
+                        <span> | </span>
+                        <a href="{% url 'registrarse' %}">REGISTRARSE</a>
+                    </li>
+                {% endif %}
 
             </ul>
         </nav>
