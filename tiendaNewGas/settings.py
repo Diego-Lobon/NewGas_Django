@@ -26,6 +26,10 @@ SECRET_KEY = 'django-insecure-$17yq2s4pcma))81s_r4_1t$!2ugy#6bdc!gd32eye(o2a1fvm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-1f55.up.railway.app'
+]
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -79,8 +83,12 @@ WSGI_APPLICATION = 'tiendaNewGas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'newgas',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': ''
     }
 }
 
