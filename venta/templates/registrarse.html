@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'styles/registrarse.css' %}">
+
+<h1>Crear Cuenta</h1>
+<form method="post" class="form_registro" id="formRegistro">
+    {% csrf_token %}
+
+    <div class="inputPrimero">
+        <input type="text" name="username" placeholder="Nombre">
+        <input type="text" name="last_name" placeholder="Apellido">
+    </div>
+    <div class="inputSegundo">
+        <input type="text" name="email" placeholder="Correo Electronico">
+
+        <input type="password" name="password1" placeholder="Contraseña">
+        
+ 
+    </div>
+    <div class="inputTercero">
+        
+
+       
+        <input type="password" name="password2" placeholder="Confirmar contraseña">
+
+    </div>
+    <div class="form_envia-iniciarSesion">
+        <input type="submit" class="enviarDatos" value="Enviar" id="enviarRegistro">
+        <span>¿Cliente registrado? <a href="{% url 'iniciarSesion' %}">Iniciar Sesion</a></span>
+        
+    </div>
+</form>
+
+{% endblock %}

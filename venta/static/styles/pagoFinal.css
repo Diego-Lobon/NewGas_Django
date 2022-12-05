@@ -1,0 +1,123 @@
+.pago_informacion {
+    
+    display: flex;
+    height: 100%;
+    padding: 50px 70px 50px 80px; 
+    flex-direction: column;
+}
+
+.pago_informacion .titulo {
+    font-size: 160%;
+    margin-bottom: 15px;
+    color: rgb(73, 73, 73);
+}
+
+.pago_navegacion ul{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-bottom: 30px;
+}
+
+.pago_navegacion ul li a {
+    font-size: 80%;
+    color: rgb(9, 95, 253);
+}
+
+
+.caja_contacto_envio {
+    border: 1px solid rgb(185, 185, 185);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+hr {
+    border: 1px solid rgb(218, 218, 218);
+}
+
+.caja_contacto_envio .contacto {
+    display: flex;
+    justify-content: space-between;
+}
+
+.caja_contacto_envio .contacto .correo {
+    margin-left: 30px;
+}
+
+.caja_contacto_envio .envio {
+    display: flex;
+    justify-content: space-between;
+}
+
+.caja_contacto_envio .envio .datos {
+    margin-left: 53px;
+}
+
+.caja_contacto_envio .metodo_dato {
+    margin-left: 40px;
+}
+
+.metodo_titulo,
+.contacto_titulo,
+.envio_titulo {
+    color: rgb(83, 83, 83);
+}
+
+.metodo,
+.correo,
+.datos {
+    color: rgb(71, 71, 71);
+}
+
+.caja_contacto_envio a {
+    color: rgb(9, 95, 253);
+    font-size: 80%;
+}
+
+
+.pago_titulo {
+    font-size: 110%;
+    color: rgb(73, 73, 73);
+}
+
+.botonPaypal {
+    margin-top: 20px;
+}
+
+
+
+
+
+.opciones_avance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.opciones_avance button {
+    padding: 20px 60px 20px 60px;
+    font-size: 110%;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(9, 95, 253);
+    border: none;
+    border-radius: 6px;
+}
+
+.opciones_avance a {
+    color: rgb(9, 95, 253);
+    font-size: 95%;
+}
+
+.btn_stripe {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgb(9, 95, 253);
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}

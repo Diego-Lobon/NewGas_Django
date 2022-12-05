@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/baseInformacion.css' %}">
+    <title>New Gas</title>
+</head>
+<body>
+    <div class="container">
+            
+        <div class="pago_informacion">
+            <span class="titulo">New Gas</span>
+            <div class="pago_navegacion">
+                <ul>
+                    <li>
+                        <a href="">Carrito</a>
+                    </li>
+                    <li>
+                        <a href="">Información</a>
+                    </li>
+                    <li>
+                        <a href="">Envíos</a>
+                    </li>
+                    <li>
+                        <a href="">Pago</a>
+                    </li>
+                </ul>
+            </div>
+        
+            {% block content %}
+        
+            {% endblock %}
+
+        </div>
+        
+        <div class="pago_producto">
+            
+            {% for producto in productos %}   
+
+            <div class="producto_info">
+                <img src="{% static 'img/Gas.png' %}" alt="Imagen-producto">
+                <div class="producto">
+                    <h2>{{ producto.nombre }}</h2>
+                    <div class="producto_precios">
+                        <div>
+                            <span>Precio Unitario: </span>
+                            <span>S/.{{ producto.precio }}</span>
+                        </div>
+                        <div>
+                            <span>Precio Total: </span>
+                            <span>S/.{{ producto.total }}</span>
+                        </div>   
+                    </div>       
+                </div>
+            </div>
+            
+            {% endfor %}
+                    
+            <hr>
+
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <span class="subtotal_precio">S/.{{ suma.total__sum }}</span>
+            </div>
+            <hr>
+            <div class="total">
+                <span>Total</span>
+                <span class="total_precio">S/.{{ suma.total__sum }}</span>
+            </div>
+
+        </div>
+            
+    </div>
+    <footer>
+        ©NewGas. Todos los Derechos Reservados 2022.
+    </footer>
+        
+    </body>
+</html>

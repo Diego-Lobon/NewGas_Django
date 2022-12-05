@@ -1,0 +1,88 @@
+
+{% extends 'layouts/baseInformacion.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/pagoInformacion.css' %}">
+
+{% for usuario in informacionUsuario %}
+
+<form method="POST">
+    {% csrf_token %} 
+    <input type="hidden" name="origen" value="informacion">
+    <div class="pago_informacion_titulo">
+        <span class="titulo_informacion">Información de contacto</span>
+        {% if user.is_authenticated %}
+
+        {% else %}
+            <div>
+                <span class="titulo_cuenta">¿Ya tienes una cuenta?</span>
+                <a href="{% url 'iniciarSesion' %}">Iniciar Sesión</a> 
+            </div>
+        {% endif %}
+        
+        
+    </div>
+    <div class="inputs_pago_informacion_titulo">
+        <div>
+            <span class="place_correo">Correo electronico</span>
+            {% if user.is_authenticated %}
+                <input type="text" name="correo" value="{{ user.email }}" tabindex="-1" onfocus="this.blur()">
+            {% else %}
+                <input type="text" name="correo" value="{{ usuario.correo }}">
+            {% endif %}
+            
+        </div>
+        <div>
+            <span class="place_celular">Nro. de celular</span>
+            <input type="text" name="celular" value="{{ usuario.celular}}">
+        </div>
+         
+    </div>
+    
+    <div class="direccion_envio">
+        <span>Dirección de envío</span>
+        <div class="inputs_nombres">
+            <div class="input_pago input_nombre">
+                <span class="place_nombre">Nombres</span>
+                <input type="text" name="nombre" value="{{ usuario.nombre}}">
+            </div>
+            <div class="input_pago input_apellido">
+                <span class="place_apellido">Apellidos</span>
+                <input type="text" name="apellido" value="{{ usuario.apellido }}">
+            </div>
+        </div>
+        <div class="input_pago input_direccion">
+            <span class="place_direccion">Dirección</span>
+            <input type="text" name="direccion" value="{{ usuario.direccion }}">
+        </div>
+        <div class="input_pago input_apartamento">
+            <span class="place_apartamento">Apartamento, localidad, etc.</span>
+            <input type="text" name="apartamento" value="{{ usuario.apartamento}}">
+        </div>
+        <div class="inputs_ubicacion">
+            <div class="input_pago input_distrito">
+                <span class="place_distrito">Distrito</span>
+                <input type="text" name="distrito" value="{{ usuario.distrito }}">
+            </div>
+            <div class="input_pago input_region">
+                <span class="place_region">Región</span>
+                <input type="text" name="region" value="{{ usuario.region }}">
+            </div>
+        </div>
+        <div class="input_pago input_dni">
+            <span class="place_apartamento">DNI.</span>
+            <input type="text" name="dni" value="{{ usuario.dni }}">
+        </div>
+    </div>
+    
+    
+    <div class="opciones_avance">
+        <a href="{% url 'carritoCompras' %}">Volver al carrito</a>
+        <button>Continuar con envíos</button>
+    </div>
+</form>
+{% endfor %}
+
+{% endblock %}

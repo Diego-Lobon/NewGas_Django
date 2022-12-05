@@ -1,0 +1,100 @@
+
+.image_presentacion img{
+    
+    width: 100%;
+}
+
+
+
+.cards {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 300px 300px;
+    padding: 20px 40px 20px 20px;
+    gap: 20px;
+}
+
+
+
+
+.card_img_gas {
+    background-color: #64C85D;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.card_img_gas img{
+    border-radius: 50%;
+    background-color: #fff;
+    
+    
+}
+
+.card_info_productos {
+    
+    /*margin-bottom: 15px;*/
+    padding: 100px;
+    color: #707070;
+
+}
+
+.card_info_productos h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.card_info_servicio {
+    background-color: #D4DBD3;
+    color: #707070;
+    
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.info_servicio,
+.info_comunicacion {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    justify-content: center;
+    width: 50%;
+}
+
+.info_servicio h4,
+.info_comunicacion h4{
+    margin-bottom: 5px;
+}
+
+.info_servicio h2,
+.info_comunicacion h2{
+    margin-bottom: 20px;
+}
+
+.img_servicio,
+.img_comunicacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_servicio img,
+.img_comunicacion img{
+    width: 200px;
+    
+}
+
+
+
+.card_info_comunicacion {
+    background-color: #D4DBD3;
+    color: #707070;
+    
+    display: flex;
+    flex-direction: row;
+}
+
+
+

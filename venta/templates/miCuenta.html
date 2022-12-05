@@ -1,0 +1,46 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/miCuenta.css' %}">
+<h1>Mi Cuenta</h1>
+<div class="informacion_cuenta">
+    <div class="historial_pedidos">
+        <h3>Historial de Pedidos</h3>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th>Dirección</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+            </tr>
+            
+            {% for pedido in historial %}
+
+            <tr>
+                <td>{{ pedido.nombreProducto }}</td>
+                <td>{{ pedido.cantidadProducto }}</td>
+                <td>{{ pedido.total }}</td>
+                <td>{{ pedido.direccion }}</td>
+                <td>{{ pedido.estadoEntrega }}</td>
+                <td>{{ pedido.fecha }}</td>
+            </tr>
+            
+            {% endfor %}
+
+        </table>
+    </div>
+    <div class="informacion_datos">
+        <h3>Informacion de la Cuenta</h3>
+        
+        <span class="nombre dato"><span class="subtitulo">Nombre: </span>{{ user.username }}</span>
+        <span class="apellido dato"><span class="subtitulo">Apellido: </span>{{ user.last_name }}</span>
+        <span class="correo dato"><span class="subtitulo">Correo: </span>{{ user.email }}</span>
+        
+    </div>
+</div>
+
+{% endblock %}

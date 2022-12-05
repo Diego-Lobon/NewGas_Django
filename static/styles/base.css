@@ -1,0 +1,103 @@
+@import url(//db.onlinewebfonts.com/c/1b2bdcf4a0fc84c6fcc89f75c86d1218?family=Omnes);
+
+* {
+    padding: 0;
+    margin: 0;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: 'Omnes';
+}
+
+/*-----------------------*/
+/* Header */ 
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    top: 0;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    background-color: #fff;
+    padding: 13px 0;
+    position: fixed;
+    width: 100%;
+    -webkit-box-shadow:0px 1px 1px #c0c0c0;
+ -moz-box-shadow:0px 1px px #c0c0c0;
+ box-shadow:0px 1px 10px #c0c0c0;
+}
+
+.header_logo {
+    
+    display: flex;
+    justify-content: center;
+}
+
+.header_logo img {
+    width: 120px;
+    border-radius: 50%;
+}
+
+.header_nav {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_nav ul {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_nav ul li:last-child {
+    color: #fff;
+    background-color: #401ADC;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.header_nav ul li:last-child a{
+    color: #fff;
+}
+
+.header_nav ul li a {
+    color: #707070;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/*-----------------------*/
+
+/*-----------------------*/
+/* MAIN */
+
+main {
+    padding-top: 146px;
+    min-height: calc(100vh - 146px);
+    
+}
+
+
+/*-----------------------*/
+
+
+/*-----------------------*/
+/* FOOTER */
+
+footer {
+    background-color: #2D268A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    color: #fff;
+}
+
+/*-----------------------*/

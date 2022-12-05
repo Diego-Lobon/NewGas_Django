@@ -1,0 +1,200 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.gg-search {
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+/* MAIN */
+
+.container {
+    
+    min-height: calc(100vh - 117.78px);
+    height: 100%;
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+
+
+.pago_informacion {
+    
+    display: flex;
+    height: 100%;
+    padding: 50px 70px 50px 80px; 
+    flex-direction: column;
+}
+
+.pago_informacion .titulo {
+    font-size: 160%;
+    margin-bottom: 15px;
+    color: rgb(73, 73, 73);
+}
+
+
+
+
+
+
+.pago_navegacion ul{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-bottom: 30px;
+}
+
+.pago_navegacion ul li a {
+    font-size: 80%;
+    color: rgb(9, 95, 253);
+}
+
+.pago_informacion_titulo {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(73, 73, 73);
+}
+
+.pago_informacion_titulo .titulo_informacion {
+    font-size: 110%;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    color: rgb(73, 73, 73);
+}
+
+.pago_informacion_titulo .titulo_cuenta {
+    font-size: 90%;
+    color: rgb(73, 73, 73);
+}
+
+.pago_informacion_titulo a{
+    font-size: 90%;
+    color: rgb(9, 95, 253);
+}
+
+.inputs_pago_informacion_titulo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.inputs_pago_informacion_titulo div {
+    width: 49%;
+    
+}
+
+.inputs_pago_informacion_titulo div span{
+    margin: 10px;
+    font-size: 80%;
+    color: rgb(187, 187, 187);
+}
+
+.inputs_pago_informacion_titulo input {
+    width: 100%;
+    padding: 26px 15px 7px 10px;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 6px;
+}
+
+.place_nombre,
+.place_apellido,
+.place_direccion,
+.place_apartamento,
+.place_distrito,
+.place_region,
+.place_celular,
+.place_correo {
+    position: absolute;
+}
+
+.direccion_envio span{
+    font-size: 110%;
+    letter-spacing: 0.2px;
+    color: rgb(73, 73, 73);
+}
+
+.direccion_envio input {
+    margin-bottom: 10px;
+}
+
+.inputs_nombres {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputs_nombres div {
+    width: 49%;
+}
+
+.input_pago input{
+    width: 100%;
+    padding: 26px 15px 7px 10px;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 6px;
+}
+
+.input_pago span {
+    margin: 10px;
+    font-size: 80%;
+    color: rgb(187, 187, 187);
+}
+
+.inputs_ubicacion {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.input_dni {
+    margin-bottom: 30px;
+}
+
+.inputs_ubicacion div {
+    width: 49%;
+}
+
+.opciones_avance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.opciones_avance button {
+    padding: 20px 60px 20px 60px;
+    font-size: 110%;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(9, 95, 253);
+    border: none;
+    border-radius: 6px;
+}
+
+.opciones_avance a {
+    color: rgb(9, 95, 253);
+    font-size: 95%;
+}
+
+
+
+
+/* RESPONSIVE */

@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'styles/iniciarSesion.css' %}">
+
+<h1>Iniciar Sesión</h1>
+<form method="post" class="form_iniciarSesion">
+    {% csrf_token %}
+    
+    <input placeholder="Nombre de Usuario" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+
+    <input placeholder="Contraseña" type="password" name="password" autocomplete="current-password" required="" id="id_password">
+    
+    <div class="form_envia-Registra">
+        <input type="submit" class="enviarDatos" value="Iniciar Sesión">
+        <span>¿Nuevo cliente? <a href="{% url 'registrarse' %}">Crear Cuenta</a></span>
+        
+    </div>
+</form>
+
+{% endblock %}

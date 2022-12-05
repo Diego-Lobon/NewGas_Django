@@ -1,0 +1,17 @@
+{% extends 'layouts/basePayment.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="mensajePago">
+        <i class="fa-solid fa-credit-card"></i>
+        <h2>Pago exitoso!</h2> 
+    </div>
+    <hr>
+    <div class="mensajePago2">
+        <p>Su pago fue procesado exitosamente.</p>
+        <a href="{% url 'index' %}"><button>Volver al Menú Principal</button></a>  
+    </div>
+    
+{% endblock %}

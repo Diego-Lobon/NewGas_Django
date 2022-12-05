@@ -1,0 +1,68 @@
+.container h1 {
+    margin-top: 50px;
+    text-align: center; 
+    color: rgb(78, 78, 78);
+    margin-bottom: 20px;
+    
+}
+
+.informacion_cuenta {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: 100%;
+}
+
+.historial_pedidos {
+    
+    padding-left: 20px;
+    
+}
+
+.historial_pedidos th{
+    
+    color: rgb(120, 120, 120);
+    
+}
+
+.historial_pedidos h3{
+    
+    color: rgb(148, 148, 148);
+    margin-bottom: 5px;
+    
+}
+
+.informacion_datos {
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.informacion_datos h3{
+    color: rgb(148, 148, 148);
+    margin-bottom: 5px;
+    
+}
+
+.subtitulo {
+    font-weight: bold;
+    color: rgb(130, 130, 130);
+}
+
+.dato {
+    margin-top: 10px;
+}
+
+.separador_header {
+    color: #fff;
+}
+
+.historial_pedidos th{
+    
+    padding: 7px 25px;
+    
+}
+
+.historial_pedidos td{
+    text-align: center;
+    padding: 5px;  
+}

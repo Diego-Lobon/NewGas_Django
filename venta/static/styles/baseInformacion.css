@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/*-----------------------*/
+/* Header */ 
+
+.gg-search {
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*-----------------------*/
+
+
+/*-----------------------*/
+/* MAIN */
+
+.container {
+    
+    min-height: calc(100vh - 117.78px);
+    height: 100%;
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+
+
+.pago_producto {
+    background-color: rgb(233, 232, 232);
+    padding: 50px 40px 50px 40px;
+}
+
+.pago_producto img {
+    width: 30%;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 10px;
+}
+
+.producto_info {
+    display: flex;
+    margin-bottom: 30px;
+} 
+
+.producto_info .producto {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.producto_precios {
+    display: flex;
+    flex-direction: column;
+}
+
+.producto_info .producto div{
+    display: flex;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+.subtotal { 
+    display: flex;
+    justify-content: space-between;
+    font-size: 130%;
+    color: rgb(104, 104, 104);
+}
+
+
+.total { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 130%;
+    color: rgb(104, 104, 104);
+}
+
+.total_precio {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+/*-----------------------*/
+/*-----------------------*/
+
+/* FOOTER */
+
+footer {
+    background-color: #2D268A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    color: #fff;
+}

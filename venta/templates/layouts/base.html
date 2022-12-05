@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewGas</title>
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header_logo">
+            <a href="{% url 'index' %}"><img src="{% static  'img/logoNewGas.png' %}" alt="Logo-NewGas"></a>
+        </div>
+        <nav class="header_nav">
+            <ul>
+                <li>
+                    <a href="">EMPRESA</a>
+                </li>
+                <li>
+                    <a href="">PRODUCTOS</a>
+                </li>
+                <li>
+                    <a href="">SERVICIOS</a>
+                </li>
+                <li>
+                    <a href="">CONTACTENOS</a>
+                </li>
+
+                <li>
+                    <a href="">INICIAR SESION</a>
+                    <span> | </span>
+                    <a href="">REGISTRARSE</a>
+                </li>
+                
+
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container">
+        
+        {% block content %}
+        
+        {% endblock %}
+
+    </main>
+
+    <footer>
+        ©NewGas. Todos los Derechos Reservados 2022.
+    </footer>
+</body>
+</html>

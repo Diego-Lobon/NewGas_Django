@@ -1,0 +1,16 @@
+{% extends 'layouts/basePayment.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="mensajePago">
+        <h2>Tu pedido esta en camino!</h2> 
+    </div>
+    <hr>
+    <div class="mensajePago2">
+        <p>En pocos minutos su pedido sera entregado.</p>
+        <a href="{% url 'index' %}"><button>Volver al Menú Principal</button></a>  
+    </div>
+    
+{% endblock %}

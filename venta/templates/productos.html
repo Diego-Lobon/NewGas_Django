@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+{{ ip }}
+<link rel="stylesheet" href="{% static 'styles/productos.css' %}">
+<div class="productos">
+    <div class="productos_carrito">
+        <a href="{% url 'carritoCompras' %}"><img src="{% static 'img/carritoDeCompra.png' %}" alt="Logo-carrito"></a>
+    </div>
+    <div class="productos_lista">
+        <ul class="producto">
+            {% for producto in object_list %}
+            
+            <li>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="idProducto" value="{{ producto.id }}">
+                    <input type="hidden" name="precio" value="{{ producto.precio }}">
+                    <img src="{% static 'img/Gas.png' %}" alt="">
+                    <h2>{{ producto.peso }}</h2>
+                    <p>
+                        {{ producto.descripcion }}
+                    </p>
+                    <h2>Precio: S/.{{ producto.precio }}</h2>
+                    <button class="button_carrito">AGREGAR AL CARRITO</button>
+                    <a href="{% url 'pagoInformacion' %}"><button class="button_comprar" type="button">COMPRAR AHORA</button></a>
+                </form>
+            </li>  
+
+            {% endfor %}
+
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

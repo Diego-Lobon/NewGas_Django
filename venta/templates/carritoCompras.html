@@ -1,0 +1,92 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/carritoCompras.css' %}">
+
+<div id="contenedorFormulario">
+
+<div class="seccion">
+    <h1>Tu carrito</h1>
+    <div class="seccion_compra">
+        <div class="seccion_precio">
+            <span class="span1">SubTotal</span>  
+            <span class="span2">S/.{{ suma.total__sum }}</span> 
+        </div>      
+        <a href="{% url 'pagoInformacion' %}"><button>Revisa tu compra</button></a>
+    </div>
+</div>
+
+{% for producto in object_list %}
+   
+    <form method="post" id="{{ producto.id }}">
+        {% csrf_token %} 
+        <div class="carrito_productos">
+            <div class="carrito_productos_1">
+                <img src="{% static 'img/Gas.png' %}" alt="foto-producto">
+                <div class="carrito_productos_descripcion">
+                    <h2>
+                        <input type="hidden" value="{{ producto.nombre }}" name="nombreProducto">
+                        <a href="">{{ producto.nombre }}</a>
+                    </h2>
+                    <span class="carrito_productos_1_precio">Precio: </span>
+                    <span class="carrito_productos_1_precioSoles">S/.{{ producto.precio }}</span>
+                </div>
+            </div>
+            <div class="carrito_productos_2">
+                <div class="carrito_cantidad">
+                    <span>Cantidad</span>
+                    <select name="cantidadProducto" id="cantidadProducto" onChange='cambiarCantidad("{{ producto.id }}");'>
+                        <option value="{{ producto.cantidadProducto }}" selected disabled hidden>{{ producto.cantidadProducto }}</option>
+                        {% with ''|center:producto.cantidad as range %}
+                            {% for _ in range %}
+                                <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
+                                
+                            {% endfor %}
+                        {% endwith %}
+
+                    </select>
+                </div>
+                <input type="hidden" value="actualizar" name="update" id="update">
+                <input type="hidden" value="eliminar" name="delete" id="delete">
+                <input type="hidden" value="{{ producto.id }}" name="idCarrito">
+                <input type="hidden" value="{{ producto.precio }}" name="precioProducto">
+                <span class="carrito_productos_2_precio">S/.{{ producto.total }}</span>
+                
+                <button onclick="eliminarProducto('{{ producto.id }}', 'delete')" type="button">X</button>
+            </div>
+        </div>
+    </form>
+
+{% endfor %}
+
+<hr>
+
+
+<div class="carrito_total_botones">
+    <div class="carrito_total_botones_info">
+        <div class="carrito_precio_final">
+            <span class="subTotal">SubTotal</span>
+            <span class="envio">Envío e impuestos calculados</span>
+        </div>
+        <span class="precio">S/.{{ suma.total__sum }}</span>
+    </div>
+    
+    <div class="carrito_total_botones_compra">
+        
+        <a href="{% url 'pagoInformacion' %}" class="boton_a"><button>Revisa tu compra</button></a>
+        <a href="{% url 'productos' %}">Seguir comprando</a>
+    </div>
+    
+</div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+<script src="{% static '/js/function.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'styles/index.css' %}">
+        <div class="image_presentacion">
+            <img src="{% static 'img/Logo_menu_NewGas.png' %}" alt="">
+        </div>
+        <div class="cards">
+            <div class="card card_img_gas">
+                <img src="{% static 'img/gas-menu.png' %}" alt="">
+            </div>
+            <div class="card card_info_productos">
+                <h2>- PRODUCTOS</h2>
+                <h3>Gas Envasado</h3>
+                <p>Al utilizar GLP en su hogar, usted contará con un combustible LIMPIO, SEGURO Y EFICIENTE.</p>
+            </div>
+            <div class="card card_info_servicio">
+                <div class="info_servicio">
+                    <h4>- EN TODO MOMENTO</h4>
+                    <h2>SERVICIO NEW GAS</h2>
+                    <p>Reparto a domicilio.
+                    Venta de reguladores.
+                    Asistencia técnica.
+                    Instalación de redes GLP.</p>
+                </div>
+                <div class="img_servicio">
+                    <img src="{% static 'img/servicio.png' %}" alt="">
+                </div>
+            </div>
+            <div class="card card_info_comunicacion">
+                <div class="info_comunicacion">
+                    <h4>- COMUNICATE CON NOSOTROS</h4>
+                    <h2>SERVICIO NEW GAS</h2>
+                    <p>Realiza tus compras por internet mas rápido 
+                        y fácil con cualquier medio de pago
+                        . Compra NewGas con garantía y 
+                        seguridad.</p>
+                </div>
+                <div class="img_comunicacion">
+                    <img src="{% static 'img/pedidos.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        
+{% endblock %}

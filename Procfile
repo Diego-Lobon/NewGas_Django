@@ -1,0 +1,1 @@
+web: gunicorn tiendaNewGas.wsgi --log-file -

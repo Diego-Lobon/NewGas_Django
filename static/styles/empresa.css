@@ -1,0 +1,32 @@
+.empresa_info {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.empresa_info_objetivos {
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.empresa_info_objetivos_mision {
+    margin-bottom: 50px;
+}
+
+.empresa_info_objetivos_mision,
+.empresa_info_objetivos_vision {
+    font-size: 20px;
+    width: 350px;
+    color: #707070;
+}
+
+.empresa_info_objetivos_mision h2,
+.empresa_info_objetivos_vision h2 {
+    margin-bottom: 10px;
+}
+
+.empresa_info_img img {
+    width: 100%;
+}

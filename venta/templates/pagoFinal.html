@@ -1,0 +1,161 @@
+
+{% extends 'layouts/baseInformacion.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/pagoFinal.css' %}">
+
+{% for usuario in informacionUsuario %}
+
+<form >
+    {% csrf_token %}
+    <div class="caja_contacto_envio">
+        <div class="contacto">
+            <div>
+                <span class="contacto_titulo">Contacto</span>
+                <span class="correo">{{ usuario.correo}}, {{ usuario.celular}}</span>
+            </div>
+            <a href="{% url 'pagoInformacion' %}">Cambiar</a>
+        </div>
+        <hr>
+        <div class="envio">
+            <div>
+                <span class="envio_titulo">Envío</span>
+                <span class="datos">{{ usuario.dni }}, {{ usuario.direccion }}, {{ usuario.apartamento }}, {{ usuario.distrito }}, {{ usuario.region }}</span>
+            </div>
+            <a href="{% url 'pagoInformacion' %}">Cambiar</a>
+        </div>
+        <hr>
+        <div class="metodo">
+            <span class="metodo_titulo">Metodo</span>
+            <span class="metodo_dato">{{ usuario.metodo }}</span>
+        </div>
+    </div>
+    
+    <!-- <span class="pago_titulo">Pago</span>-->
+    
+    <br>
+
+    {% if usuario.metodo == 'Envio a domicilio, pago Paypal' %}
+        
+        <!-- BOTON PAYPAL -->
+
+        <div id="paypal-button-container"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=AQP-WpDozoK5_3hbGCnQ1Ps4IEYJzMwRSqL7yoo2YD8iKB7kTSE-qUj6EX4nRDuOJa7_1US8cz9f0Gcy&currency=USD&intent=capture&enable-funding=venmo" data-sdk-integration-source="integrationbuilder"></script>
+        <input type="hidden" id="total" name="total" value="{{ suma.total__sum }}">
+        <script>
+            var calcular = Math.trunc(Number(document.getElementById('total').value / 3.81))
+            var total = String(calcular)
+            
+            const paypalButtonsComponent = paypal.Buttons({
+
+                
+
+                // optional styling for buttons
+                // https://developer.paypal.com/docs/checkout/standard/customize/buttons-style-guide/
+                style: {
+                color: "gold",
+                shape: "rect",
+                layout: "vertical"
+                },
+
+                // set up the transaction
+                createOrder: (data, actions) => {
+                    // pass in any options from the v2 orders create call:
+                    // https://developer.paypal.com/api/orders/v2/#orders-create-request-body
+                    const createOrderPayload = {
+                        purchase_units: [
+                            {
+                                amount: {
+                                    value: total
+                                }
+                            }
+                        ]
+                    };
+
+                    return actions.order.create(createOrderPayload);
+                },
+
+                // finalize the transaction
+                onApprove: (data, actions) => {
+                    const captureOrderHandler = (details) => {
+                        const payerName = details.payer.name.given_name;
+                        console.log('Transaction completed');
+
+                        window.location.replace("{% url 'payment-success' %}")
+
+                    };
+
+                    return actions.order.capture().then(captureOrderHandler);
+                },
+
+                // handle unrecoverable errors
+                onError: (err) => {
+                    console.error('An error prevented the buyer from checking out with PayPal');
+                
+                    window.location.replace("{% url 'payment-failed' %}")
+                
+                }
+            });
+
+            paypalButtonsComponent
+                .render("#paypal-button-container")
+                .catch((err) => {
+                    console.error('PayPal Buttons failed to render');
+                });
+        </script>
+
+    {% endif %}
+
+    {% if usuario.metodo == 'Envio a domicilio, pago con Stripe' %}
+
+        <!-- Boton Stripe -->
+
+        <button id="stripe-checkout"  class="btn_stripe"> Paga con Stripe </button>
+
+        <script src="https://js.stripe.com/v3/"></script>
+
+        <script>
+
+            var stripe_public_key = Stripe('{{ stripe_public_key }}');
+
+            const pay_now_button = document.querySelector('#stripe-checkout');
+
+            pay_now_button.addEventListener('click', event => {
+
+                stripe_public_key.redirectToCheckout({
+
+                    sessionId : '{{ session_id }}'
+
+                }).then(function(result){
+                    
+                    
+
+                });
+
+            })
+
+        </script>
+
+    {% endif %}
+
+    <div class="opciones_avance">
+        <a href="{% url 'pagoEnvio' %}">Volver a envíos</a>
+
+        {% if usuario.metodo == 'Envio a domicilio, pago contra entrega' %}
+
+            <a href="{% url 'pedido' %}"><button type="button">Finalizar Pedido</button></a>
+        
+        {% endif %}
+
+    </div>
+</form>
+
+{% endfor %}
+
+
+
+
+
+{% endblock %}

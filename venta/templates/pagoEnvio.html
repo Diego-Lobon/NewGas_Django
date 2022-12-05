@@ -1,0 +1,56 @@
+
+{% extends 'layouts/baseInformacion.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/pagoEnvio.css' %}">
+
+{% for usuario in informacionUsuario %}
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="origen" value="envio">
+    <div class="caja_contacto_envio">
+        <div class="contacto">
+            <div>
+                <span class="contacto_titulo">Contacto</span>
+                <span class="correo">{{ usuario.correo}}, {{ usuario.celular}}</span>
+            </div>
+            <a href="{% url 'pagoInformacion' %}">Cambiar</a>
+        </div>
+        <hr>
+        <div class="envio">
+            <div>
+                <span class="envio_titulo">Envío</span>
+                <span class="datos">{{ usuario.dni}}, {{ usuario.direccion}}, {{ usuario.apartamento}}, {{ usuario.distrito}}, {{ usuario.region}}</span>
+            </div>
+            <a href="{% url 'pagoInformacion' %}">Cambiar</a>
+        </div>
+    </div>
+    <span class="metodo_titulo">Metodo</span>
+    <div class="caja_metodo">
+        <div class="primerMetodo">
+            <input type="radio" name="metodo" value="Envio a domicilio, pago Paypal" checked>
+            <span class="dato_metodo">Envio a domicilio, pago Paypal</span>
+        </div>
+        <hr>
+        <div class="segundoMetodo">
+            <input type="radio" name="metodo" value="Envio a domicilio, pago con Stripe">
+            <span class="dato_metodo">Envio a domicilio, pago con Stripe</span>
+        </div>
+        <hr>
+        <div class="tercerMetodo">
+            <input type="radio" name="metodo" value="Envio a domicilio, pago contra entrega">
+            <span class="dato_metodo">Envio a domicilio, pago contra entrega</span>
+        </div>
+    </div>
+    <div class="opciones_avance">
+        <a href="{% url 'pagoInformacion' %}">Volver a información</a>
+        <button>Continuar con el pago</button>
+    </div>
+</form>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/empresa.css' %}">
+
+<div class="empresa_info">
+    <div class="empresa_info_objetivos">
+        <div class="empresa_info_objetivos_mision">
+            <h2>- Nuestra misión</h2>
+            <p>Llegar a un nivel superior de calidad de servicio para sus clientes.</p>
+        </div>
+        <div class="empresa_info_objetivos_vision">
+            <h2>- Nuestra visión</h2>
+            <p>Ser reconocida como la empresa líder del Perú en el abastecimiento de gas</p>
+        </div>
+    </div>
+    <div class="empresa_info_img">
+        <img src="{% static 'img/empresa.jpg' %}" alt="Imagen_Gas">
+    </div>
+</div> 
+
+{% endblock %}

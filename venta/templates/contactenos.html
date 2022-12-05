@@ -1,0 +1,35 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/contactenos.css' %}">
+
+    <h1>Estamos listos para ayudarte consultas acerca de New Gas.</h1>
+
+    <form method="post" class="form_consulta">
+        {% csrf_token %}
+        {{ form.nombre }}
+        {{ form.apellido }}
+        <div class="dos_inputs">
+            {{ form.correoElectronico }}
+            {{ form.empresa }} 
+        </div>
+        <div class="dos_inputs">
+            {{ form.dni }}
+            {{ form.celular }}
+        </div>
+        {{ form.consulta }}
+        <div>
+            <input type="checkbox" class="checkbox_1_form"><span> He leído la Cláusula Informativa de New Gas.</span>
+        </div>
+        <div>
+            <input type="checkbox" class="checkbox_2_form"><span> Autorizo que New Gas me envíe promociones y ofertas comerciales de sus productos y servicios, conforme a la Cláusula de Usos Adicionales.</span>
+        </div>
+        <input type="submit" value="ENVIAR" class="btn_enviar">
+    </form>
+
+
+
+
+{% endblock %}

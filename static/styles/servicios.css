@@ -1,0 +1,54 @@
+.container {
+    background-color: #F2F2F2;
+    
+}
+
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 40% 100%;
+    padding: 40px 100px 160px 100px;   
+}
+
+.servicios_inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    grid-column: 1/5;
+    font-family: 'Omnes';
+    text-align: center;
+}
+
+.servicios_inicio h2 {
+    margin-bottom: 10px;
+    
+}
+
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.servicio img{
+    width: 180px;
+    margin-bottom: 15px;
+}
+
+.servicio h3{
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+.servicio p{
+    width: 80%;
+}
+
+
+

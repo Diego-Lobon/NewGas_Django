@@ -1,0 +1,34 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/servicios.css' %}">
+<div class="servicios">
+    <div class="servicios_inicio">
+        <h2>REPARTO A DOMICILIO</h2>
+        <p>Queremos estar más cerca cuando nos necesites, es por eso que contamos con una amplia red de canales de atención donde podrás: hacer tus pedidos y consultas y mucho más. ¡te esperamos!</p>
+    </div>
+    <div class="servicio servicios_callcenter">
+        <img src="{% static 'img/icono-callcenter.png' %}" alt="Logo-servicio">
+        <h3>CALL CENTER</h3>
+        <p>Nuestros ejecutivos están para atenderte desde 09:00 a 22:00 hrs. de lunes a domingos, contáctanos al (01) 671-0000</p>
+    </div>
+    <div class="servicio servicios_whatsapp">
+        <img src="{% static 'img/icono-whatsapp.png' %}" alt="Logo-servicio">
+        <h3>WHATSAPP</h3>
+        <p>+51 997508088 con este número tendremos una comunicación mucho más directa y rápida.</p>
+    </div>
+    <div class="servicio servicios_redes">
+        <img src="{% static 'img/icono-redesSociales.png' %}" alt="Logo-servicio">
+        <h3>REDES SOCIALES</h3>
+        <p>Nuestras redes sociales: Facebook, Instagram, Twitter y Youtube están para recibir tus consultas en todo momento.</p>
+    </div>
+    <div class="servicio servicios_sitioWeb">
+        <img src="{% static 'img/icono-sitiosWeb.png' %}" alt="Logo-servicio">
+        <h3>SITIO WEB</h3>
+        <p>Desde nuestro sitio puedes realizar todo lo que necesites. ¡Te esperamos!</p>
+    </div>
+</div>
+
+{% endblock %}
